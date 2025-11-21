@@ -55,3 +55,60 @@ cover/
 # Workbench Project Layout
 data/scratch/*
 !data/scratch/.gitkeep
+
+# === ML/DL Specific ===
+
+# Model files
+*.pth
+*.pt
+*.ckpt
+*.safetensors
+*.bin
+*.h5
+*.onnx
+*.pb
+
+# Large data files
+data/raw/
+data/processed/
+*.csv
+*.tsv
+*.parquet
+*.json
+*.jsonl
+
+# Model checkpoints
+models/checkpoints/*
+models/pretrained/*
+!models/checkpoints/.gitkeep
+!models/pretrained/.gitkeep
+
+# Logs and experiments
+*.log
+logs/
+tensorboard/
+wandb/
+runs/
+
+# Environment
+.env
+.env.local
+venv/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# NVIDIA specific
+*.nsys-rep
+*.sqlite
+*.qdrep
+*.qdstrm
+
+# Temporary
+tmp/
+temp/
+scratch/
