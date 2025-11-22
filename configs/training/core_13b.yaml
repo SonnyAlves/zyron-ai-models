@@ -1,0 +1,38 @@
+model:
+  name: "zyron-core-13b"
+  type: "gpt-decoder"
+  d_model: 5120
+  n_layers: 40
+  n_heads: 40
+  vocab_size: 32000
+  max_seq_len: 8192
+
+training:
+  # Production values
+  micro_batch_size: 1
+  global_batch_size: 256
+  max_steps: 100000
+  lr: 2e-4
+  weight_decay: 0.1
+  warmup_steps: 2000
+  grad_clip_norm: 1.0
+
+dev:
+  # Dev/Test values
+  d_model: 768
+  n_layers: 8
+  n_heads: 12
+  max_seq_len: 512
+  micro_batch_size: 2
+  global_batch_size: 8
+  max_steps: 20
+
+data:
+  train_path: "data/processed/train"
+  val_path: "data/processed/val"
+  tokenizer_path: "models/tokenizer/core_13b.model"
+
+runtime:
+  device: "auto"
+  precision: "bf16"
+  num_workers: 4
